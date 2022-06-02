@@ -1,0 +1,21 @@
+{% load cat_tag %}
+{% get_categories as cat %}
+
+{% comment %}
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+    <a href="{% url 'price' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Категории</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto"></ul>
+    {% for i in cat %}
+    <a href = "{% url 'category' i.pk %}" class="list-group-item list-group-item-action text-white bg-dark">{{ i.name }}</a>
+    {% endfor %}
+    <hr>
+</div>
+
+<br>
+{% endcomment %}
+
+{% show_categories %}

@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+  {% include 'inc/_bar_cat.html' %}
+  {% for i in price_list %}
+    <div>
+      <h2><a href="{% url 'category' i.cat.pk %}">{{ i.cat }}</a></h2>
+      <h3>{{ i.title }}</h3>
+      <p>{{ i.price }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
+
+
+

@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+{% include 'inc/_bar_cat.html' %}
+<h1>{{ category.name }}:</h1>
+<hr>
+{% for i in cat_filt %}
+    <div>
+        <h4>{{ i.title }}</h3>
+        <p>{{ i.price }}</p>
+    </div>
+{% endfor %}
+{% endblock %}
+
+
